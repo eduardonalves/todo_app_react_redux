@@ -1,0 +1,23 @@
+{
+  "name": "front_end",
+  "version": "1.0.0",
+  "main": "scr/loader.js",
+  "scripts": {
+    "dev": "nodemon",
+    "production": "pm2 start src/loader.js --name todo-app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.4",
+    "mongoose": "5.4.19",
+    "node-restful": "0.2.6",
+    "pm2": "3.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.10"
+  }
+}
