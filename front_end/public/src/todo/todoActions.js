@@ -77,7 +77,7 @@ export const remove = (todo) => {
 
 
 export const clear = () => {
-    return {
+    return [{
         type: 'TODO_CLEAR'
-    }
+    }, search()]
 }
