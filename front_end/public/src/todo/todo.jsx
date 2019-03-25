@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 
+
 import PageHeader from '../template/pageHeader'
 import TodoForm from './todoForm'
 import TodoList from './todoList'
+
+
 
 const URL= 'http://localhost:3003/api/todos'
 
@@ -25,7 +28,7 @@ export default class Todo extends Component {
     refresh(description='') {
         const search = description ? `&description__regex=/${description}/`:''
         axios.get(`${URL}?sort=-createdAt&${search}`)
-
+        
         .then(
             resp => {
                 
@@ -46,6 +49,7 @@ export default class Todo extends Component {
     }
     handleAdd() {
         const description = this.state.description
+        
         axios.post(URL, {description})
         .then(resp => this.refresh())
     }
@@ -60,6 +64,7 @@ export default class Todo extends Component {
     }
 
     handleChange(e){
+        console.log('passou aqui2')
         this.setState({...this.state, description:e.target.value})
     }
     handleClear(){
